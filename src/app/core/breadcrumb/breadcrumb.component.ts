@@ -1,23 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+import { MenuItem } from 'primeng/api';
+
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss'],
 })
 export class BreadcrumbComponent implements OnInit {
-
+  items: MenuItem[];
   constructor(private translate: TranslateService) {
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('ro-RO');
-
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('ro-RO');
+    this.items = [
+      {
+        label: 'Home',
+        items: [
+          { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/home'] },
+          { label: 'Orders', icon: 'pi pi-fw pi-inbox', routerLink: ['/orders'] },
+          { label: 'Analytics', icon: 'pi pi-fw pi-chart-line', routerLink: ['/analytics'] },
+        ],
+      },
+    ];
   }
 
   changeLanguage(lang: string) {
-    this.translate.use(lang);
+    this.translate.setDefaultLang(lang);
   }
 
   ngOnInit(): void {}
