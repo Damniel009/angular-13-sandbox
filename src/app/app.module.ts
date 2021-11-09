@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import {
@@ -17,12 +18,15 @@ import localeEn from '@angular/common/locales/en';
 import localeHu from '@angular/common/locales/hu';
 import localeRo from '@angular/common/locales/ro';
 
+import {ButtonModule} from 'primeng/button';
+
 registerLocaleData(localeEn, localeHu, localeRo);
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     TranslateModule.forRoot({
@@ -32,10 +36,11 @@ registerLocaleData(localeEn, localeHu, localeRo);
         deps: [HttpClient],
       },
     }),
+    ButtonModule
   ],
   providers: [TranslateService],
   bootstrap: [AppComponent],
-  exports: [TranslateModule]
+  exports: [TranslateModule],
 })
 export class AppModule {}
 
