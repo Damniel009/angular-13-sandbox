@@ -18,6 +18,7 @@ export class BreadcrumbComponent implements OnInit {
           { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/home'] },
           { label: 'Orders', icon: 'pi pi-fw pi-inbox', routerLink: ['/orders'] },
           { label: 'Analytics', icon: 'pi pi-fw pi-chart-line', routerLink: ['/analytics'] },
+          { label: 'Maps', icon: 'pi pi-fw pi-map', routerLink: ['/map'] },
         ],
       },
     ];
