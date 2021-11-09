@@ -1,2 +1,19 @@
-<div>{{ 'HELLO' | translate:param }}</div>
-<p-button label="Submit"></p-button>
+<button
+  pButton
+  class="me-2"
+  label="EN"
+  (click)="changeLanguage('en-US')"
+></button>
+<button
+  pButton
+  class="me-2"
+  label="HU"
+  (click)="changeLanguage('hu-HU')"
+></button>
+<button
+  pButton
+  class="me-2"
+  label="RO"
+  (click)="changeLanguage('ro-RO')"
+></button>
+<div class="w-25">{{ "HELLO" | translate: param }}</div>
