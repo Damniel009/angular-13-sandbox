@@ -20,11 +20,9 @@ import localeRo from '@angular/common/locales/ro';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { BreadcrumbComponent } from './core/breadcrumb/breadcrumb.component';
 
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
-import { HeaderComponent } from './core/header/header.component';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeEn, localeHu, localeRo);

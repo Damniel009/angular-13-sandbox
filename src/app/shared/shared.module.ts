@@ -9,6 +9,9 @@ import { translateLoaderFactory } from '../app.module';
 import { BreadcrumbComponent } from '../core/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from '../core/header/header.component';
 
+//Dialog components
+
+
 //PrimeNG
 import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
@@ -18,10 +21,9 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 //PrimeNG services
 import { ConfirmationService } from 'primeng/api';
-import { DynamicDialogComponent } from './dynamic-dialog/dynamic-dialog.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BreadcrumbComponent, DynamicDialogComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent],
   imports: [
     FormsModule,
     ButtonModule,
