@@ -14,17 +14,21 @@ import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DropdownModule } from 'primeng/dropdown';
 import { MenuModule } from 'primeng/menu';
-import { GMapModule } from 'primeng/gmap';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+//PrimeNG services
+import { ConfirmationService } from 'primeng/api';
+import { DynamicDialogComponent } from './dynamic-dialog/dynamic-dialog.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BreadcrumbComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent, DynamicDialogComponent],
   imports: [
     FormsModule,
     ButtonModule,
-    GMapModule,
     CommonModule,
     MenuModule,
     OverlayPanelModule,
+    ConfirmDialogModule,
     DropdownModule,
     TranslateModule.forChild({
       loader: {
@@ -34,7 +38,7 @@ import { GMapModule } from 'primeng/gmap';
       },
     }),
   ],
-  providers: [],
-  exports: [HeaderComponent, BreadcrumbComponent, TranslateModule],
+  providers: [ConfirmationService],
+  exports: [HeaderComponent, BreadcrumbComponent, TranslateModule, ConfirmDialogModule],
 })
 export class SharedModule {}

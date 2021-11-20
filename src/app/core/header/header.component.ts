@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { MenuItem } from 'primeng/api';
+import { ConfirmationService, MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,7 +11,9 @@ export class HeaderComponent implements OnInit {
   items: MenuItem[];
   userItems: MenuItem[];
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private confirmationService: ConfirmationService
+  ) {
     this.items = [
       {
         label: 'Buy',
@@ -68,7 +70,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggleLogin() {
-    this.isLoggedIn = !this.isLoggedIn;
+  openLoginDialog() {
+    // this.isLoggedIn = !this.isLoggedIn;
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to perform this action?',
+      accept: () => {
+        //Actual logic to perform a confirmation
+      },
+    });
   }
 }
