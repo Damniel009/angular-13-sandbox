@@ -1,32 +1,42 @@
-<!-- <p-dropdown
-  [options]="cities"
-  [(ngModel)]="selectedCity"
-  optionLabel="name"
-  (onChange)="switchLanguage($event)"
-></p-dropdown> -->
-<div class="w-100 d-flex justify-content-end">
-  <button
-    style="color: whitesmoke"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-search"
-    class="ms-2 p-button-rounded p-button-text"
-  ></button>
-  <button
-    style="color: whitesmoke"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-bell"
-    class="ms-2 p-button-rounded p-button-text"
-  ></button>
-  <button
-    style="color: whitesmoke"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-cog"
-    class="ms-2 p-button-rounded p-button-text"
-  ></button>
+<div class="header-container d-flex p-3 align-items-center">
+  <div class="col-3 d-flex justify-content-center logo">
+    <img height="30px" src="assets/images/logo.png" alt="logo" />
+  </div>
+
+  <div class="col-6 d-flex justify-content-center menu-items">
+    <p-menu [model]="items"></p-menu>
+  </div>
+
+  <div
+    *ngIf="isLoggedIn"
+    class="col-3 d-flex justify-content-center user-logged-in"
+  >
+    <button
+      pButton
+      type="button"
+      label="Switch to Seller"
+      class="p-button-outlined p-button-rounded"
+    ></button>
+
+    <p-button (click)="menu.toggle($event)" styleClass="p-button-text">
+      <span alt="logo" class="pi pi-user me-1" style="width: 1.5rem"></span>
+      <span class="p-ml-2 p-text-bold">My account</span>
+      <span alt="logo" class="pi pi-angle-down pt-1 ms-2" style="width: 1.5rem"></span>
+    </p-button>
+  </div>
+
+  <div *ngIf="!isLoggedIn" class="col-3 d-flex justify-content-center login">
+    <button
+      pButton
+      type="button"
+      label="LOGIN/SIGNUP"
+      icon="pi pi-lock"
+      class="p-button-text"
+      (click)="toggleLogin()"
+    ></button>
+  </div>
+
+  <div class="action-buttons"></div>
 </div>
+
+<p-menu #menu [popup]="true" [model]="userItems"></p-menu>

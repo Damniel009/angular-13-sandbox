@@ -1,0 +1,70 @@
+@import "../../../assets/style/colors";
+
+.header-container {
+}
+
+:host ::ng-deep .menu-items .p-menu {
+  background-color: $backgroundColor1;
+  border: none;
+  color: $textColor;
+
+  .p-menu-list {
+    display: flex;
+  }
+
+  .p-submenu-header {
+    background-color: $backgroundColor1;
+    color: $textColor;
+  }
+
+  .p-menuitem-link {
+    .p-menuitem-text,
+    .p-menuitem-icon {
+      color: $textColor;
+      font-weight: 500;
+    }
+
+    &.p-menuitem-link-active {
+      text-decoration: underline;
+      text-decoration-color: $mainColor;
+      text-decoration-style: solid;
+    }
+  }
+}
+
+:host ::ng-deep .p-button.p-button-text {
+  color: $textColor;
+  font-weight: 700;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &:enabled:hover {
+    background: rgba($mainColor, 0.04);
+    color: $textColor;
+    border-color: transparent;
+  }
+}
+
+:host ::ng-deep .p-button.p-button-outlined {
+  color: $mainColor;
+  border: 2px solid $mainColor;
+  padding: 0.3rem 1rem !important;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:enabled:hover {
+    background: rgba($mainColor, 0.04);
+    color: $mainColor;
+    border: 2px solid $mainColor;
+  }
+
+  &:enabled:active {
+    background: rgba($mainColor, 0.04);
+    color: $mainColor;
+    border: 2px solid $mainColor;
+  }
+}

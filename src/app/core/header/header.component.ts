@@ -1,36 +1,74 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-interface City {
-  name: string;
-  code: string;
-}
-
+import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  cities: City[];
-
-  selectedCity: City = {
-    name: 'English',
-    code: 'en-US',
-  };
+  isLoggedIn = false;
+  items: MenuItem[];
+  userItems: MenuItem[];
 
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en-US');
-    this.cities = [
-      { name: 'English', code: 'en-US' },
-      { name: 'Hungarian', code: 'hu-HU' },
-      { name: 'Romanian', code: 'ro-RO' },
+    this.items = [
+      {
+        label: 'Buy',
+        routerLink: ['/home'],
+      },
+      {
+        label: 'Sell',
+        routerLink: ['/orders'],
+      },
+      {
+        label: 'Company',
+        routerLink: ['/analytics'],
+      },
+      {
+        label: 'Help',
+        routerLink: ['/analytics'],
+      },
+    ];
+
+    this.userItems = [
+      {
+        label: 'My current bid/offer',
+        routerLink: ['/home'],
+      },
+      {
+        separator: true,
+      },
+      {
+        label: 'Profile',
+        routerLink: ['/orders'],
+      },
+      {
+        label: 'Messages',
+        routerLink: ['/analytics'],
+      },
+      {
+        label: 'Notifications',
+        routerLink: ['/analytics'],
+      },
+      {
+        label: 'Favorites',
+        routerLink: ['/analytics'],
+      },
+      {
+        label: 'Payment informations',
+        routerLink: ['/analytics'],
+      },
+      {
+        label: 'Log out',
+        routerLink: ['/analytics'],
+      },
     ];
   }
 
   ngOnInit(): void {}
 
-  switchLanguage(event: any): void {
-    // console.log(event.value.code);
-    this.translate.use(event.value.code);
+  toggleLogin() {
+    this.isLoggedIn = !this.isLoggedIn;
   }
 }
