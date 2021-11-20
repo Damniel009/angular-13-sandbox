@@ -26,6 +26,7 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { HeaderComponent } from './core/header/header.component';
 import { SharedModule } from './shared/shared.module';
+import { SideMenuComponent } from './core/side-menu/side-menu.component';
 
 registerLocaleData(localeEn, localeHu, localeRo);
 

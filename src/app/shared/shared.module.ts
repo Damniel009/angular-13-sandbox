@@ -16,9 +16,10 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DropdownModule } from 'primeng/dropdown';
 import { MenuModule } from 'primeng/menu';
 import { GMapModule } from 'primeng/gmap';
+import { SideMenuComponent } from '../core/side-menu/side-menu.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BreadcrumbComponent, MapComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent, SideMenuComponent, MapComponent],
   imports: [
     FormsModule,
     ButtonModule,
@@ -36,6 +37,6 @@ import { GMapModule } from 'primeng/gmap';
     }),
   ],
   providers: [],
-  exports: [HeaderComponent, BreadcrumbComponent, TranslateModule, MapComponent],
+  exports: [HeaderComponent, BreadcrumbComponent, SideMenuComponent, TranslateModule, MapComponent],
 })
 export class SharedModule {}
