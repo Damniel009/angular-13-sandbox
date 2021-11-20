@@ -8,7 +8,6 @@ import { translateLoaderFactory } from '../app.module';
 //Components
 import { BreadcrumbComponent } from '../core/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from '../core/header/header.component';
-import { MapComponent } from './map/map.component';
 
 //PrimeNG
 import { ButtonModule } from 'primeng/button';
@@ -19,7 +18,7 @@ import { GMapModule } from 'primeng/gmap';
 import { SideMenuComponent } from '../core/side-menu/side-menu.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BreadcrumbComponent, SideMenuComponent, MapComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent, SideMenuComponent],
   imports: [
     FormsModule,
     ButtonModule,
@@ -37,6 +36,6 @@ import { SideMenuComponent } from '../core/side-menu/side-menu.component';
     }),
   ],
   providers: [],
-  exports: [HeaderComponent, BreadcrumbComponent, SideMenuComponent, TranslateModule, MapComponent],
+  exports: [HeaderComponent, BreadcrumbComponent, SideMenuComponent, TranslateModule],
 })
 export class SharedModule {}
