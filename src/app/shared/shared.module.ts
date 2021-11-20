@@ -21,9 +21,12 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 //PrimeNG services
 import { ConfirmationService } from 'primeng/api';
+import { ModalLoginComponent } from './dialog-components/modal-login/modal-login.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ModalHeaderComponent } from './dialog-components/modal-header/modal-header.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BreadcrumbComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent, ModalLoginComponent, ModalHeaderComponent],
   imports: [
     FormsModule,
     ButtonModule,
@@ -40,7 +43,7 @@ import { ConfirmationService } from 'primeng/api';
       },
     }),
   ],
-  providers: [ConfirmationService],
+  providers: [ConfirmationService, DialogService],
   exports: [HeaderComponent, BreadcrumbComponent, TranslateModule, ConfirmDialogModule],
 })
 export class SharedModule {}

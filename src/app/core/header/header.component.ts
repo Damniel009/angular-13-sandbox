@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { ConfirmationService, MenuItem } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ModalLoginComponent } from 'src/app/shared/dialog-components/modal-login/modal-login.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,9 +12,7 @@ export class HeaderComponent implements OnInit {
   items: MenuItem[];
   userItems: MenuItem[];
 
-  constructor(
-    private confirmationService: ConfirmationService
-  ) {
+  constructor(private dialogService: DialogService) {
     this.items = [
       {
         label: 'Buy',
@@ -71,12 +70,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   openLoginDialog() {
-    // this.isLoggedIn = !this.isLoggedIn;
-    this.confirmationService.confirm({
-      message: 'Are you sure that you want to perform this action?',
-      accept: () => {
-        //Actual logic to perform a confirmation
-      },
+    const ref = this.dialogService.open(ModalLoginComponent, {
+      header: 'Choose a Car',
+      showHeader: false,
+      width: '45%',
+    });
+
+    ref.onClose.subscribe(() => {
+      this.isLoggedIn = !this.isLoggedIn;
     });
   }
 }
