@@ -1,4 +1,4 @@
-<app-modal-header [title]="config.header"></app-modal-header>
+<app-modal-header [title]="config.header" (onClose)="closeDialog()"></app-modal-header>
 <div>
-  <button pButton type="button" label="LOGIN" (click)="close()"></button>
+  <button pButton type="button" label="LOGIN"></button>
 </div>

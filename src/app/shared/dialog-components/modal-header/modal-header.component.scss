@@ -1,0 +1,17 @@
+@import "../../../../assets/style/colors";
+
+:host ::ng-deep .row {
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+}
+
+h3 {
+  color: $textColor;
+}
+
+:host ::ng-deep .p-button-rounded {
+  color: $textColor;
+}

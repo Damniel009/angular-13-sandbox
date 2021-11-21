@@ -13,11 +13,10 @@ export class ModalLoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.config);
-    
+    // console.log(this.config);
   }
 
-  close() {
+  closeDialog(): void {
     this.ref.close();
   }
 }

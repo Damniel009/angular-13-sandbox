@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MenuItem } from 'primeng/api';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ModalLoginComponent } from 'src/app/shared/dialog-components/modal-login/modal-login.component';
+import { DynamicDialogService } from 'src/app/shared/services/dynamic-dialog.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   items: MenuItem[];
   userItems: MenuItem[];
 
-  constructor(private dialogService: DialogService) {
+  constructor(private dialogService: DynamicDialogService) {
     this.items = [
       {
         label: 'Buy',
@@ -70,9 +71,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   openLoginDialog() {
-    const ref = this.dialogService.open(ModalLoginComponent, {
-      header: 'Choose a Car',
-      showHeader: false,
+    const ref: DynamicDialogRef = this.dialogService.open(ModalLoginComponent, {
+      header: 'Login or sign up',
       width: '45%',
     });
 
