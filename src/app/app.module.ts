@@ -18,11 +18,8 @@ import localeHu from '@angular/common/locales/hu';
 import localeRo from '@angular/common/locales/ro';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 
-import { ButtonModule } from 'primeng/button';
-import { DropdownModule } from 'primeng/dropdown';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeEn, localeHu, localeRo);
@@ -44,8 +41,6 @@ registerLocaleData(localeEn, localeHu, localeRo);
         deps: [HttpClient],
       },
     }),
-    ButtonModule,
-    DropdownModule,
   ],
   providers: [TranslateService],
   bootstrap: [AppComponent],

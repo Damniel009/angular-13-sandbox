@@ -1,5 +1,20 @@
-<div style="background-color: grey; font-weight: bold" class="p-2">
-  <!-- {{ "HELLO" | translate }} -->
+<div class="home-container">
+  <div class="search-container p-4">
+    <div class="header text-center">
+      <h1>Buy and sell on your on terms.</h1>
+      <h3>Explore how you could save thousands of dollars on commision</h3>
+    </div>
 
-  <!-- <app-map></app-map> -->
+    <div class="search-form d-flex">
+      <span class="p-input-icon-left">
+        <i class="pi pi-map-marker"></i>
+        <input
+          type="text"
+          pInputText
+          placeholder="Search by location"
+          [(ngModel)]="location"
+        />
+      </span>
+    </div>
+  </div>
 </div>
